@@ -20,7 +20,11 @@ def slot_notifier(branch='AM', persons=1, initial_slot=None):
             if soonest_date < initial_slot:
                 # send desktop notification
                 notification_message = '%s %s %s-%s' % (branch, soonest_date, start_time, end_time)
-                notification.notify(title='Time Slot Found', message=notification_message, app_name='Slot Finder')
+                notification.notify(
+                    title='Time Slot Found',
+                    message=notification_message,
+                    app_name='IND Slot Finder',
+                    app_icon='./calendar.png')
         except Exception as e:
             print(e)
         time.sleep(30)
